@@ -3,6 +3,7 @@ import * as Screen from "../screen"
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { AnimatedTabBarNavigator } from "react-native-animated-nav-tab-bar";
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import { Image } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const Tabs = AnimatedTabBarNavigator();
@@ -12,21 +13,34 @@ const Main = ({navigation}) =>{
             <Tabs.Navigator
             tabBarOptions={{
             activeTintColor: "#2F7C6E",
-            inactiveTintColor: "#222222"
+            inactiveTintColor: "#222222",
+            activeBackgroundColor: "#F8D6B6",
             }}
         >
             <Tabs.Screen
-                name="Home"
+                name="Beranda"
                 component={Screen.Home}
                 options={{
                     tabBarIcon: ({ focused, color, size }) => (
-                        <Icon
-                            name="home"
-                            size={size ? size : 24}
-                            color={focused ? color : "#222222"}
-                            focused={focused}
-                            color={color}
-                        />
+                        <Image source={require('../asset/img/home.png')} style={{width:25, height: 25}}/>
+                    )
+                }}
+            />
+            <Tabs.Screen
+                name="Latihan"
+                component={Screen.Trophy}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <Image source={require('../asset/img/task.png')} style={{width:25, height: 25}}/>
+                    )
+                }}
+            />
+            <Tabs.Screen
+                name="Permainan"
+                component={Screen.Trophy}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <Image source={require('../asset/img/game.png')} style={{width:25, height: 25}}/>
                     )
                 }}
             />
@@ -35,13 +49,7 @@ const Main = ({navigation}) =>{
                 component={Screen.Trophy}
                 options={{
                     tabBarIcon: ({ focused, color, size }) => (
-                        <Icon
-                            name="trophy"
-                            size={size ? size : 24}
-                            color={focused ? color : "#222222"}
-                            focused={focused}
-                            color={color}
-                        />
+                        <Image source={require('../asset/img/trophy.png')} style={{width:25, height: 25}}/>
                     )
                 }}
             />
