@@ -10,7 +10,7 @@ const Tabs = AnimatedTabBarNavigator();
 
 const Main = ({navigation}) =>{
     return(
-            <Tabs.Navigator
+        <Tabs.Navigator
             tabBarOptions={{
             activeTintColor: "#2F7C6E",
             inactiveTintColor: "#222222",
