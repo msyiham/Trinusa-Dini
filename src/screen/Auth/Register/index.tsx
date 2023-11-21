@@ -5,7 +5,7 @@ import CustomButton from '../../../components/CustomButton';
 import SocialSignInButtons from '../../../components/SocialSignInButtons';
 import {useNavigation} from '@react-navigation/core';
 import { FIREBASE_AUTH, FIRESTORE_DB } from '../../../../firebase';
-import SweetAlert from "react-native-sweet-alert";
+// import SweetAlert from "react-native-sweet-alert";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { setDoc, doc } from 'firebase/firestore';
 const Register = () => {
@@ -35,46 +35,46 @@ const Register = () => {
   
       console.log(response);
       navigation.replace('SignIn');
-      SweetAlert.showAlertWithOptions({
-        title: 'Selamat',
-        subTitle: `Anda Berhasil Mendaftar, ${username}!`, // Add username here
-        confirmButtonTitle: 'OK',
-        style: 'success',
-        cancellable: false,
-      });
+      // SweetAlert.showAlertWithOptions({
+      //   title: 'Selamat',
+      //   subTitle: `Anda Berhasil Mendaftar, ${username}!`, // Add username here
+      //   confirmButtonTitle: 'OK',
+      //   style: 'success',
+      //   cancellable: false,
+      // });
     } catch (error) {
       console.log(error);
       if (!email || !password || !username) {
-        SweetAlert.showAlertWithOptions({
-          title: 'Gagal',
-          subTitle: 'Tolong lengkapi input!',
-          confirmButtonTitle: 'OK',
-          style: 'error',
-          cancellable: false,
-        });
+        // SweetAlert.showAlertWithOptions({
+        //   title: 'Gagal',
+        //   subTitle: 'Tolong lengkapi input!',
+        //   confirmButtonTitle: 'OK',
+        //   style: 'error',
+        //   cancellable: false,
+        // });
       }  else if (error.code === 'auth/email-already-in-use') {
-        SweetAlert.showAlertWithOptions({
-          title: 'Gagal',
-          subTitle: 'Email anda sudah terdaftar, silahkan Login!',
-          confirmButtonTitle: 'OK',
-          style: 'error',
-          cancellable: false,
-        });
+        // SweetAlert.showAlertWithOptions({
+        //   title: 'Gagal',
+        //   subTitle: 'Email anda sudah terdaftar, silahkan Login!',
+        //   confirmButtonTitle: 'OK',
+        //   style: 'error',
+        //   cancellable: false,
+        // });
       } else if (error.code === 'auth/invalid-email') {
-        SweetAlert.showAlertWithOptions({
-          title: 'Gagal',
-          subTitle: 'Gunakan email yang valid',
-          confirmButtonTitle: 'OK',
-          style: 'error',
-          cancellable: false,
-        });
+        // SweetAlert.showAlertWithOptions({
+        //   title: 'Gagal',
+        //   subTitle: 'Gunakan email yang valid',
+        //   confirmButtonTitle: 'OK',
+        //   style: 'error',
+        //   cancellable: false,
+        // });
       } else {
-        SweetAlert.showAlertWithOptions({
-          title: 'Error',
-          subTitle: `Sign up failed: ${error.message}`,
-          confirmButtonTitle: 'OK',
-          confirmButtonColor: '#746555',
-        });
+        // SweetAlert.showAlertWithOptions({
+        //   title: 'Error',
+        //   subTitle: `Sign up failed: ${error.message}`,
+        //   confirmButtonTitle: 'OK',
+        //   confirmButtonColor: '#746555',
+        // });
       }
 
     } finally {
