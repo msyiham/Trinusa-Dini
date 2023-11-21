@@ -31,10 +31,11 @@ const Register = () => {
         username: username,
         email: user.email,
         uid: user.uid,
+        checkPoint: "",
       });
   
       console.log(response);
-      navigation.replace('SignIn');
+      navigation.replace('Login');
       // SweetAlert.showAlertWithOptions({
       //   title: 'Selamat',
       //   subTitle: `Anda Berhasil Mendaftar, ${username}!`, // Add username here
@@ -84,7 +85,7 @@ const Register = () => {
   
 
   const onSignInPress = () => {
-    navigation.navigate('SignIn');
+    navigation.navigate('Login');
   };
 
   const onTermsOfUsePressed = () => {
