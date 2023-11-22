@@ -6,6 +6,8 @@ import {
   StyleSheet,
   useWindowDimensions,
   ScrollView,
+  KeyboardAvoidingView,
+  TouchableOpacity,
 } from 'react-native';
 import CustomInput from '../../../components/CustomInput';
 import CustomButton from '../../../components/CustomButton';
@@ -113,14 +115,12 @@ const Login = () => {
   };
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={styles.root}>
+    <View style={styles.root}>
         <Image
-          source={require('../../../asset/img/Logo.png')}
+          source={require('../../../asset/img/gambar.png')}
           style={[styles.logo, {height: height * 0.3}]}
           resizeMode="contain"
         />
-
         <CustomInput
           placeholder="Email"
           value={email}
@@ -132,7 +132,6 @@ const Login = () => {
           setValue={setPassword}
           secureTextEntry
         />
-
         <CustomButton text="Sign In" onPress={onSignInPressed} />
 
         <CustomButton
@@ -140,27 +139,36 @@ const Login = () => {
           onPress={onForgotPasswordPressed}
           type="TERTIARY"
         />
-
-        <CustomButton
+        {/* <CustomButton
           text="Don't have an account? Create one"
           onPress={onSignUpPress}
           type="TERTIARY"
-        />
+        /> */}
+          <View style={{flexDirection:'row', alignItems: 'center',justifyContent: 'center', marginTop:0}}>
+            <Text style={styles.text}>Sudah Punya Akun? </Text>
+            <TouchableOpacity onPress={onSignUpPress}><Text style={styles.link}>Regis</Text></TouchableOpacity>
+          </View>
       </View>
-    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   root: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: '#FFDD5B',
   },
   logo: {
     width: '70%',
     maxWidth: 300,
     maxHeight: 200,
   },
+  link:{
+    fontWeight:'bold',
+    color:'blue'
+  }
 });
 
 export default Login;

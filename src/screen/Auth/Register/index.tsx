@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity,Image,useWindowDimensions} from 'react-native';
 import CustomInput from '../../../components/CustomInput';
 import CustomButton from '../../../components/CustomButton';
 import SocialSignInButtons from '../../../components/SocialSignInButtons';
@@ -14,6 +14,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const auth = FIREBASE_AUTH;
   const navigation = useNavigation();
+  const {height} = useWindowDimensions();
   const firestore = FIRESTORE_DB;
   const [loading, setLoading] = useState(false);
 
@@ -97,8 +98,12 @@ const Register = () => {
   };
 
   return (
-        <View style={{flex:1}}>
-          <Text style={styles.title}>Buat Akun</Text>
+        <View style={styles.root}>
+          <Image
+            source={require('../../../asset/img/gambar.png')}
+            style={[styles.logo, {height: height * 0.3}]}
+            resizeMode="contain"
+          />
 
           <CustomInput keyboardType='email-address' placeholder="Email" value={email} setValue={setEmail} />
           <CustomInput placeholder="Username" value={username} setValue={setUsername} />
@@ -117,14 +122,11 @@ const Register = () => {
 
 const styles = StyleSheet.create({
   root: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#051C60',
-    margin: 10,
+    backgroundColor: '#FFDD5B',
   },
   text: {
     color: 'gray',
@@ -132,6 +134,11 @@ const styles = StyleSheet.create({
   },
   link: {
     color: '#FDB075',
+  },
+  logo: {
+    width: '70%',
+    maxWidth: 300,
+    maxHeight: 200,
   },
 });
 

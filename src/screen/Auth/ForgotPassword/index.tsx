@@ -15,11 +15,10 @@ const ForgotPassword = () => {
   };
 
   const onSignInPress = () => {
-    navigation.navigate('SignIn');
+    navigation.navigate('Login');
   };
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
         <Text style={styles.title}>Reset your password</Text>
 
@@ -37,14 +36,16 @@ const ForgotPassword = () => {
           type="TERTIARY"
         />
       </View>
-    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   root: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: '#FFDD5B',
   },
   title: {
     fontSize: 24,
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   link: {
-    color: '#FDB075',
+    color: '#3B71F3',
   },
 });
 
