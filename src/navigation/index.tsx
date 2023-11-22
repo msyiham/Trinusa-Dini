@@ -67,6 +67,9 @@ const Navigation = () => {
             <Stack.Screen name='Login' component={Screen.Auth.Login} />
             <Stack.Screen name='Register' component={Screen.Auth.Register} />
             <Stack.Screen name='ForgotPassword' component={Screen.Auth.ForgotPassword} />
+            <Stack.Screen name='HalamanPembuka' component={Screen.Auth.HalamanPembuka} />
+            <Stack.Screen name='WaktuBelajar' component={Screen.Auth.WaktuBelajar} />
+            
         </Stack.Navigator>
     );
 };

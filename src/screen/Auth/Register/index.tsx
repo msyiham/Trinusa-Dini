@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity,Image,useWindowDimensions} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity,Image,useWindowDimensions, Alert} from 'react-native';
 import CustomInput from '../../../components/CustomInput';
 import CustomButton from '../../../components/CustomButton';
 import SocialSignInButtons from '../../../components/SocialSignInButtons';
@@ -44,6 +44,21 @@ const Register = () => {
       //   style: 'success',
       //   cancellable: false,
       // });
+      Alert.alert(
+        'Selamat',
+        `Anda berhasil mendaftar, ${username}!`,
+        [
+          {
+            text: 'OK',
+            onPress: () => {
+              console.log('OK Pressed');
+              // Navigasi ke halaman selanjutnya di sini
+              navigation.navigate('HalamanPembuka');
+            },
+          },
+        ],
+        { cancelable: false }
+      );
     } catch (error) {
       console.log(error);
       if (!email || !password || !username) {
@@ -54,6 +69,17 @@ const Register = () => {
         //   style: 'error',
         //   cancellable: false,
         // });
+        Alert.alert(
+          'Gagal',
+          `Tolong lengkapi input`,
+          [
+            {
+              text: 'OK',
+              onPress: () => console.log('OK Pressed'),
+            },
+          ],
+          { cancelable: false }
+        );
       }  else if (error.code === 'auth/email-already-in-use') {
         // SweetAlert.showAlertWithOptions({
         //   title: 'Gagal',
@@ -62,6 +88,21 @@ const Register = () => {
         //   style: 'error',
         //   cancellable: false,
         // });
+        Alert.alert(
+          'Gagal',
+          `Email sudah terdaftar, silahkan login`,
+          [
+            {
+              text: 'OK',
+              onPress: () => {
+                console.log('OK Pressed');
+                // Navigasi ke halaman selanjutnya di sini
+                navigation.navigate('Login');
+              },
+            },
+          ],
+          { cancelable: false }
+        );
       } else if (error.code === 'auth/invalid-email') {
         // SweetAlert.showAlertWithOptions({
         //   title: 'Gagal',
@@ -70,6 +111,17 @@ const Register = () => {
         //   style: 'error',
         //   cancellable: false,
         // });
+        Alert.alert(
+          'Gagal',
+          `Gunakan email yang valid`,
+          [
+            {
+              text: 'OK',
+              onPress: () => console.log('OK Pressed'),
+            },
+          ],
+          { cancelable: false }
+        );
       } else {
         // SweetAlert.showAlertWithOptions({
         //   title: 'Error',
@@ -77,6 +129,18 @@ const Register = () => {
         //   confirmButtonTitle: 'OK',
         //   confirmButtonColor: '#746555',
         // });
+        Alert.alert(
+          'Gagal',
+          error.message,
+          [
+            {
+              text: 'OK',
+              onPress: () => console.log('OK Pressed'),
+            },
+          ],
+          { cancelable: false }
+        );
+
       }
 
     } finally {
@@ -87,6 +151,9 @@ const Register = () => {
 
   const onSignInPress = () => {
     navigation.navigate('Login');
+  };
+  const onHalamanPembuka = () => {
+    navigation.navigate('HalamanPembuka');
   };
 
   const onTermsOfUsePressed = () => {
@@ -100,7 +167,7 @@ const Register = () => {
   return (
         <View style={styles.root}>
           <Image
-            source={require('../../../asset/img/gambar.png')}
+            source={require('../../../asset/img/register.png')}
             style={[styles.logo, {height: height * 0.3}]}
             resizeMode="contain"
           />
