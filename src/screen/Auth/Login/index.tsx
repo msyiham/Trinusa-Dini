@@ -33,20 +33,20 @@ const Login = () => {
   const {height} = useWindowDimensions();
   const navigation = useNavigation();
   
-  // const showDialog = () => {
-  //   setErrorDialogVisible(true);
-  // };
+  const showDialog = () => {
+    setErrorDialogVisible(true);
+  };
 
-  // const hideDialog = () => {
-  //   setErrorDialogVisible(false);
-  // };
-  // const showSuccessDialog = () => {
-  //   setSuccessDialogVisible(true);
-  // };
+  const hideDialog = () => {
+    setErrorDialogVisible(false);
+  };
+  const showSuccessDialog = () => {
+    setSuccessDialogVisible(true);
+  };
 
-  // const hideSuccessDialog = () => {
-  //   setSuccessDialogVisible(false);
-  // };
+  const hideSuccessDialog = () => {
+    setSuccessDialogVisible(false);
+  };
 
   const onSignInPressed = () => {
     if (!email || !password) {
