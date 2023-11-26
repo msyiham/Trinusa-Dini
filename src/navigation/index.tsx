@@ -73,6 +73,7 @@ const Navigation = () => {
             <Stack.Screen name='Bermain' component={Screen.Bermain} />
             <Stack.Screen name='Tes' component={Screen.Tes} />
             <Stack.Screen name='Berlatih' component={Screen.Berlatih} />
+            <Stack.Screen name='Home1' component={Screen.Home1} />
             
         </Stack.Navigator>
     );

@@ -23,7 +23,7 @@ const Tes = () => {
   };
 
   const closeModal = () => {
-    setModalVisible(false);
+    navigation.navigate('Berlatih');
   };
     return(
     <View>
