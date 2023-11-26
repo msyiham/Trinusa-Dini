@@ -270,7 +270,7 @@ const Login = () => {
           </View>
      
           <View style={{flexDirection:'row', alignItems: 'center',justifyContent: 'center', marginTop:10}}>
-            <Text style={styles.text}>Sudah Punya Akun? </Text>
+            <Text style={styles.text}>Belum Punya Akun? </Text>
             <TouchableOpacity onPress={onSignUpPress}><Text style={styles.link}>Regis</Text></TouchableOpacity>
           </View>
       </View>

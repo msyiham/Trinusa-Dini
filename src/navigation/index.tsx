@@ -27,15 +27,6 @@ const Main = ({navigation}) =>{
                 }}
             />
             <Tabs.Screen
-                name="Latihan"
-                component={Screen.Trophy}
-                options={{
-                    tabBarIcon: ({ focused, color, size }) => (
-                        <Image source={require('../asset/img/task.png')} style={{width:25, height: 25}}/>
-                    )
-                }}
-            />
-            <Tabs.Screen
                 name="Permainan"
                 component={Screen.Trophy}
                 options={{
@@ -44,6 +35,16 @@ const Main = ({navigation}) =>{
                     )
                 }}
             />
+            <Tabs.Screen
+                name="Latihan"
+                component={Screen.Trophy}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <Image source={require('../asset/img/task.png')} style={{width:25, height: 25}}/>
+                    )
+                }}
+            />
+         
             <Tabs.Screen
                 name="Trophy"
                 component={Screen.Trophy}
@@ -69,6 +70,9 @@ const Navigation = () => {
             <Stack.Screen name='ForgotPassword' component={Screen.Auth.ForgotPassword} />
             <Stack.Screen name='HalamanPembuka' component={Screen.Auth.HalamanPembuka} />
             <Stack.Screen name='WaktuBelajar' component={Screen.Auth.WaktuBelajar} />
+            <Stack.Screen name='Bermain' component={Screen.Bermain} />
+            <Stack.Screen name='Tes' component={Screen.Tes} />
+            <Stack.Screen name='Berlatih' component={Screen.Berlatih} />
             
         </Stack.Navigator>
     );

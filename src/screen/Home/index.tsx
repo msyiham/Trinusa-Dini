@@ -1,15 +1,18 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView,useWindowDimensions } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Image, ScrollView,useWindowDimensions,TouchableOpacity,FlatList } from 'react-native';
+import CustomSet from '../../components/CustomSet';
+import CustomScrolButon from '../../components/CustomScrolButon';
+
 
 const Home = () => {
-  const {height} = useWindowDimensions();
     const data = [
       { id: '1', text: '0', imageSource: require('../../asset/img/Simpan.png') },
       { id: '2', text: '0', imageSource: require('../../asset/img/Apisemangat.png') },
       { id: '3', text: '0', imageSource: require('../../asset/img/Puzzle.png') },
       { id: '4', text: '5', imageSource: require('../../asset/img/Hati.png') },
     ];
-  
+
+ 
     return (
       <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -21,17 +24,12 @@ const Home = () => {
         ))}
       </View>
       <ScrollView style={styles.scrollView}>
-        <View style={styles.set}>
-          <View>
-          <Text style={{ color:'#A8870C', fontSize:20,fontWeight:'bold' }}>Activity 1: Sumatera</Text>
-          <Text style={{ color:'#A8870C', fontSize:12,fontWeight:'bold' }}>Mengenali kebudayaan berupa tarian yang ada pada pulau sumatera</Text>
-          </View>
-          <Image
-              source={require('../../asset/img/buku.png')}
-              style={[styles.logo1, {height: height * 0.3}]}
-              resizeMode="contain"
-              />
-        </View>
+        <CustomSet
+        />
+        <CustomScrolButon
+        />
+        <CustomSet
+        />
       </ScrollView>
       </View>
     );
@@ -45,7 +43,7 @@ const Home = () => {
       flexDirection: 'row', 
       justifyContent:'center',
       alignItems:'center',
-      padding:10,
+      padding:2.5,
       backgroundColor: '#FFDD5B',
     },
     itemContainer: {
@@ -70,10 +68,10 @@ const Home = () => {
       flex:1,
       backgroundColor: '#f0f0f0',
     },
-    set:{
-      flexDirection:'row',
-      backgroundColor:'#F8FA94'
-    }
+    columnContainer: {
+      flexDirection: 'column',
+    },
+    
   });
   
  
