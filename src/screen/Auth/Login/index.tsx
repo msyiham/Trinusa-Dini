@@ -27,7 +27,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [errorDialogVisible, setErrorDialogVisible] = useState(false);
   const [successDialogVisible, setSuccessDialogVisible] = useState(false);
-  const [username, setUsername] = useState(''); // Add username state
+  const [username, setUsername] = useState(''); 
   const auth = FIREBASE_AUTH;
   const firestore = FIRESTORE_DB;
   const {height} = useWindowDimensions();

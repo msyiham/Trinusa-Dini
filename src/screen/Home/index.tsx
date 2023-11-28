@@ -6,10 +6,10 @@ import CustomScrolButon from '../../components/CustomScrolButon';
 
 const Home = () => {
     const data = [
-      { id: '1', text: '0', imageSource: require('../../asset/img/Simpan.png') },
+      { id: '1', text: '0', imageSource: require('../../asset/img/Hati.png') },
       { id: '2', text: '0', imageSource: require('../../asset/img/Apisemangat.png') },
       { id: '3', text: '0', imageSource: require('../../asset/img/Puzzle.png') },
-      { id: '4', text: '5', imageSource: require('../../asset/img/Hati.png') },
+      { id: '4', text: 'Lvl 1', imageSource: require('../../asset/img/star.png') },
     ];
 
  
@@ -28,7 +28,8 @@ const Home = () => {
         />
         <CustomScrolButon
         />
-        <CustomSet
+       <Image
+        source={require('../../asset/img/lock2.png')}
         />
       </ScrollView>
       </View>

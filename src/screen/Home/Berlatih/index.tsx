@@ -8,6 +8,9 @@ const Berlatih = () => {
     const [playing, setPlaying] = useState(false);
     const [modalVisible, setModalVisible] = useState(false);
     const navigation = useNavigation();
+    const onhalamantes = () => {
+      navigation.navigate('Tes');
+    };
     const closeModal = () => {
         setModalVisible(false);
 
@@ -19,16 +22,20 @@ const Berlatih = () => {
           Alert.alert("video has finished playing!");
         }
         }, []);
+        const handleSimpanPress = () => {
+          // Menampilkan alert ketika tombol "Simpan Video" diklik
+          Alert.alert('Video tersimpan, lihat koleksi tarian');
+        };
     return(
     <View> 
         <View style={ styles.container }>
             <TouchableOpacity style={styles.buton}>
                 <Text style={styles.text}>Step1</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buton1}>
+            <TouchableOpacity style={styles.buton1} onPress={onhalamantes}>
                 <Text  style={styles.text}>Step2</Text>
             </TouchableOpacity >
-            <TouchableOpacity style={styles.buton2}>
+            <TouchableOpacity style={styles.buton2} >
                 <Text  style={styles.text}>Step3</Text>
             </TouchableOpacity>
             <Image
@@ -42,6 +49,14 @@ const Berlatih = () => {
             <Text>Praktik Kebudayaan</Text>
         </View>
         <Text style={{ margin:20, fontWeight:'bold', marginTop:0 }}>Mari adik adik mengikuti gerakan tari dibawah ini!</Text>
+        <View style={{ bottom:15, left:16, flexDirection:'row' }}>
+          <TouchableOpacity onPress={handleSimpanPress} >
+          <Image
+          source={require('../../../asset/img/Simpan.png')}
+          style={{ width:30,height:30 }}/>
+          </TouchableOpacity>
+          <Text style={{ marginLeft:10,top:7 }} >Simpan Video</Text>
+        </View>
         <View>
             <YoutubePlayer
             height={300}
@@ -49,7 +64,9 @@ const Berlatih = () => {
             videoId={"TJZ6mclliA8"}
             onChangeState={onStateChange}
             />
+          
         </View>
+    
         <View style={{ justifyContent:'center', alignItems:'center' }}>
         <TouchableOpacity style={styles.submitButton} onPress={() => setModalVisible(true)}>
            <Text style={styles.submitButtonText}>Selanjutnya</Text>

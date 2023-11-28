@@ -7,16 +7,14 @@ const Tes = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [modalVisible, setModalVisible] = useState(false);
     const { height } = useWindowDimensions();
-
+    const onhalamanbermain = () => {
+      navigation.navigate('Bermain');
+    };
     const handleSelection = (option) => {
         setSelectedOption(option);
 
-    // Di sini, Anda bisa menambahkan logika untuk mengecek jawaban yang benar atau salah
-    // Misalnya, dengan membandingkan nilai 'option' dengan jawaban yang benar.
-    // Jangan lupa untuk menyesuaikan logika ini sesuai dengan kebutuhan aplikasi Anda.
-    // Contoh logika:
     if (option === 'tariPiring') {
-      setModalVisible(true); // Tampilkan modal jika jawaban benar
+      setModalVisible(true); 
     } else {
       Alert.alert('Jawaban Anda salah. Coba lagi!');
     }
@@ -28,7 +26,7 @@ const Tes = () => {
     return(
     <View>
       <View style={ styles.container }>
-        <TouchableOpacity style={styles.buton}>
+        <TouchableOpacity style={styles.buton} onPress={onhalamanbermain}>
             <Text style={styles.text}>Step1</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buton1}>
@@ -79,7 +77,7 @@ const Tes = () => {
         </TouchableOpacity>
         <TouchableOpacity  onPress={() => handleSelection('tariPiring')}>
             <Image
-                source={require('../../../asset/img/avatar4.png')}
+                source={require('../../../asset/img/taripiring.png')}
                 style={[styles.logo1, {height: height * 0.2}]}
                 resizeMode="contain"
             />
@@ -129,7 +127,7 @@ const Tes = () => {
       },
     buton:{
         backgroundColor:'#F8FA94',
-        borderRadius:15,
+        borderRadius:20,
         padding:15,
         width:100,
         alignItems:'center'

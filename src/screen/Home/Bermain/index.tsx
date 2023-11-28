@@ -2,6 +2,8 @@ import React, { useState, useCallback, useRef } from 'react';
 import { StyleSheet,Text,View,Alert,Image,TouchableOpacity, useWindowDimensions,TextInput,ScrollView,Modal} from 'react-native';
 import YoutubePlayer from "react-native-youtube-iframe";
 import { useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 
 const Bermain = () => {
     const navigation = useNavigation(); 
@@ -49,7 +51,7 @@ const Bermain = () => {
         <YoutubePlayer
         height={300}
         play={playing}
-        videoId={"TJZ6mclliA8"}
+        videoId={"As5r4VxqEGQ"}
         onChangeState={onStateChange}
       />
    

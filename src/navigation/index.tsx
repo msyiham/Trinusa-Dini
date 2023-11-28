@@ -28,7 +28,7 @@ const Main = ({navigation}) =>{
             />
             <Tabs.Screen
                 name="Permainan"
-                component={Screen.Trophy}
+                component={Screen.Permainan}
                 options={{
                     tabBarIcon: ({ focused, color, size }) => (
                         <Image source={require('../asset/img/game.png')} style={{width:25, height: 25}}/>
@@ -37,7 +37,7 @@ const Main = ({navigation}) =>{
             />
             <Tabs.Screen
                 name="Latihan"
-                component={Screen.Trophy}
+                component={Screen.Latihan}
                 options={{
                     tabBarIcon: ({ focused, color, size }) => (
                         <Image source={require('../asset/img/task.png')} style={{width:25, height: 25}}/>
@@ -46,11 +46,11 @@ const Main = ({navigation}) =>{
             />
          
             <Tabs.Screen
-                name="Trophy"
-                component={Screen.Trophy}
+                name="Profil"
+                component={Screen.Profil}
                 options={{
                     tabBarIcon: ({ focused, color, size }) => (
-                        <Image source={require('../asset/img/trophy.png')} style={{width:25, height: 25}}/>
+                        <Image source={require('../asset/img/profilanak.png')} style={{width:40, height: 40}}/>
                     )
                 }}
             />
@@ -64,7 +64,8 @@ const Navigation = () => {
             <Stack.Screen name='SplashScreen' component={Screen.SplashScreen} />
             <Stack.Screen name='Main' component={Main} />
             <Stack.Screen name="Home" component={Screen.Home} />
-            <Stack.Screen name="Trophy" component={Screen.Trophy} />
+            <Stack.Screen name="Profil" component={Screen.Profil} />
+      
             <Stack.Screen name='Login' component={Screen.Auth.Login} />
             <Stack.Screen name='Register' component={Screen.Auth.Register} />
             <Stack.Screen name='ForgotPassword' component={Screen.Auth.ForgotPassword} />
@@ -74,6 +75,9 @@ const Navigation = () => {
             <Stack.Screen name='Tes' component={Screen.Tes} />
             <Stack.Screen name='Berlatih' component={Screen.Berlatih} />
             <Stack.Screen name='Home1' component={Screen.Home1} />
+            <Stack.Screen name='Permainan' component={Screen.Permainan} />
+            <Stack.Screen name='Latihan' component={Screen.Latihan} />
+
             
         </Stack.Navigator>
     );

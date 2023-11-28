@@ -10,13 +10,14 @@ const CustomSet = () => {
         <Text style={{ color:'#A8870C', fontSize:20,fontWeight:'bold' }}>Activity 1: Sumatera</Text>
         <Text style={{ color:'#A8870C', fontSize:12,fontWeight:'bold' }}>Mengenali kebudayaan berupa tarian yang ada pada pulau sumatera</Text>
       </View>
+      <TouchableOpacity>
       <Image 
         source={require('../../asset/img/buku.png')}
         style={[styles.logo1, {height: height * 0.1}]}
         resizeMode="contain"
         /> 
+      </TouchableOpacity>
     </View>
-  
   </View>
     );
 };

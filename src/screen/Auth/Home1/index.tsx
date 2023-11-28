@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, ScrollView,useWindowDimensions,TouchableOpacity,FlatList, NavigationContainer } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView,useWindowDimensions,TouchableOpacity,Dimensions } from 'react-native';
 import CustomSet from '../../../components/CustomSet';
 import CustomScrolButon1 from '../../../components/CustomScrolButon1';
+
+
 
 
 const Home1 = () => {
@@ -11,8 +13,6 @@ const Home1 = () => {
       { id: '3', text: '0', imageSource: require('../../../asset/img/Puzzle.png') },
       { id: '4', text: '5', imageSource: require('../../../asset/img/Hati.png') },
     ];
-
- 
     return (
       <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -28,10 +28,10 @@ const Home1 = () => {
         />
         <CustomScrolButon1
         />
-        <CustomSet
+        <Image
+        source={require('../../../asset/img/lock2.png')}
         />
       </ScrollView>
-    
       </View>
     );
   };
@@ -72,7 +72,7 @@ const Home1 = () => {
     columnContainer: {
       flexDirection: 'column',
     },
-    
+  
   });
   
  
